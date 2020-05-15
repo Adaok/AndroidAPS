@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -124,6 +125,9 @@ import io.reactivex.schedulers.Schedulers;
 import static info.nightscout.androidaps.utils.DateUtil.now;
 
 public class OverviewFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
+
+    private static final String TAG = "OverviewFragment";
+
     private static Logger log = LoggerFactory.getLogger(L.OVERVIEW);
 
     private CompositeDisposable disposable = new CompositeDisposable();
@@ -286,6 +290,7 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
         if (acceptTempButton != null)
             acceptTempButton.setOnClickListener(this);
         quickWizardButton = (SingleClickButton) view.findViewById(R.id.overview_quickwizardbutton);
+        Log.d(TAG, "onCreateView: ");
         quickWizardButton.setOnClickListener(this);
         quickWizardButton.setOnLongClickListener(this);
         calibrationButton = (SingleClickButton) view.findViewById(R.id.overview_calibrationbutton);
@@ -831,7 +836,11 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 onClickAcceptTemp();
                 break;
             case R.id.overview_quickwizardbutton:
-                onClickQuickwizard();
+                // TODO: 15/05/2020 change for open activity
+                // FOR ACTIVITY CLASS
+                Intent intent = new Intent(getActivity(), QuickWizardListActivity.class );
+                startActivity(intent);
+                //onClickQuickwizard();
                 break;
             case R.id.overview_wizardbutton:
                 WizardDialog wizardDialog = new WizardDialog();
@@ -1226,6 +1235,9 @@ public class OverviewFragment extends Fragment implements View.OnClickListener, 
                 quickWizardButton.setVisibility(View.GONE);
         } else
             quickWizardButton.setVisibility(View.GONE);
+
+        // TODO: 15/05/2020 remove or edit before pull request
+        quickWizardButton.setVisibility(View.VISIBLE);
 
         // **** Various treatment buttons ****
         if (carbsButton != null) {
