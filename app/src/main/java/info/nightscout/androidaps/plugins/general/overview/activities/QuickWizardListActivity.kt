@@ -47,6 +47,7 @@ class QuickWizardListActivity : NoSplashAppCompatActivity() {
             val carbs: TextView = itemView.findViewById(R.id.overview_quickwizard_item_carbs)
             val from: TextView = itemView.findViewById(R.id.overview_quickwizard_item_from)
             val to: TextView = itemView.findViewById(R.id.overview_quickwizard_item_to)
+            //TODO change name button variable
             private val editButton: Button = itemView.findViewById(R.id.overview_quickwizard_item_edit_button)
             private val removeButton: Button = itemView.findViewById(R.id.overview_quickwizard_item_remove_button)
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/overview_quickwizard_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,12 +16,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/icon_overview_quickwizard_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="false"
@@ -31,7 +32,8 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/icon_overview_quickwizard_iv">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,27 +108,44 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+            <ImageView
+                android:id="@+id/overview_quickwizard_item_remove_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_delete"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
 
-        <LinearLayout
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/overview_quickwizard_item_edit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/overview_quickwizard_item_edit_button" />
 
             <Button
                 android:id="@+id/overview_quickwizard_item_remove_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_toEndOf="@+id/overview_quickwizard_item_edit_button"
                 android:text="@string/overview_quickwizard_item_remove_button" />
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/overview_quickwizard_glucides_value_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textStyle="normal|bold"
+                tools:text="25"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
 
