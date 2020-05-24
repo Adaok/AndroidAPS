@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -48,10 +49,14 @@ class QuickWizardListActivity : NoSplashAppCompatActivity() {
             val from: TextView = itemView.findViewById(R.id.overview_quickwizard_item_from)
             val to: TextView = itemView.findViewById(R.id.overview_quickwizard_item_to)
             //TODO change name button variable
+            private val takeItButton: Button = itemView.findViewById(R.id.overview_quickwizard_item_take_button)
             private val editButton: Button = itemView.findViewById(R.id.overview_quickwizard_item_edit_button)
-            private val removeButton: Button = itemView.findViewById(R.id.overview_quickwizard_item_remove_button)
+            private val removeButton: ImageView = itemView.findViewById(R.id.overview_quickwizard_item_remove_btn)
 
             init {
+                takeItButton.setOnClickListener{
+                    //TODO prepare dialog
+                }
                 editButton.setOnClickListener {
                     val manager = fragmentManager
                     val editQuickWizardDialog = EditQuickWizardDialog()

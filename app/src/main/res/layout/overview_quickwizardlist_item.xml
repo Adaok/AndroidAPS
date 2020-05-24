@@ -123,17 +123,19 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/overview_quickwizard_item_edit_button"
+                android:id="@+id/overview_quickwizard_item_take_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/overview_quickwizard_item_edit_button" />
+                android:text="@string/overview_quickwizard_item_take_button" />
 
             <Button
-                android:id="@+id/overview_quickwizard_item_remove_button"
+                android:id="@+id/overview_quickwizard_item_edit_button"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/overview_quickwizard_item_edit_button"
-                android:text="@string/overview_quickwizard_item_remove_button" />
+                android:layout_toEndOf="@+id/overview_quickwizard_item_take_button"
+                android:text="@string/overview_quickwizard_item_edit_button" />
 
             <TextView
                 android:id="@+id/overview_quickwizard_glucides_value_tv"
